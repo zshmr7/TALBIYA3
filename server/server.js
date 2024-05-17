@@ -2,7 +2,7 @@
 const path = require('path');
 const http = require('http');
 const express = require('express');
-const socketIO = require('socket.io');
+const socket = require('socket.io');
 
 
 
@@ -20,7 +20,7 @@ require('dotenv').config(); // Load environment variables from .env file
 
 const mongoose = require('mongoose');
 
-const url = process.env.MONGODB_URI;
+const url = process.env.MONGODB_URI || "mongodb://localhost:27017/mydb";
 
 mongoose.connect(url, {
   useNewUrlParser: true,
