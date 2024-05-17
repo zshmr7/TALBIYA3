@@ -12,21 +12,6 @@ const {Players} = require('./utils/players');
 
 
 
-// Connect to MongoDB using mongoose with the updated options
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((error) => console.error('MongoDB connection error:', error));
-
-app.use(express.static(publicPath));
-
-server.listen(port, () => {
-  console.log(`Server started on port ${port}`);
-});
-
-
 
 
 
