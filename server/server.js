@@ -2,7 +2,7 @@
 const path = require('path');
 const http = require('http');
 const express = require('express');
-const socket = require('socket.io');
+const socketIO = require('socket.io');
 
 
 
