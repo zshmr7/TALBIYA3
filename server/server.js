@@ -3,10 +3,40 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
+const mongoose = require('mongoose');
 
 //Import classes
 const {LiveGames} = require('./utils/liveGames');
 const {Players} = require('./utils/players');
+
+
+
+
+const url = process.env.MONGODB_URI; // Use environment variable for MongoDB URI
+const port = process.env.PORT || 3000; // Use environment variable for port, default to 3000
+
+
+// Connect to MongoDB using mongoose with the updated options
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((error) => console.error('MongoDB connection error:', error));
+
+app.use(express.static(publicPath));
+
+server.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
+
+
+
+
+
+
+
+
 
 const publicPath = path.join(__dirname, '../public');
 var app = express();
