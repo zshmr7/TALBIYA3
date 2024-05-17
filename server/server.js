@@ -18,7 +18,6 @@ const {Players} = require('./utils/players');
 
 require('dotenv').config(); // Load environment variables from .env file
 
-const mongoose = require('mongoose');
 
 const url = process.env.MONGODB_URI || "mongodb://localhost:27017/mydb";
 
