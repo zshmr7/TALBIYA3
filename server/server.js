@@ -9,6 +9,7 @@ const socket = require('socket.io');
 
 
 
+var mongoose = require('mongoose');
 
 
 
@@ -67,10 +68,6 @@ var io = socketIO(server);
 var games = new LiveGames();
 var players = new Players();
 
-//Mongodb setup
-var MongoClient = require('mongodb').MongoClient;
-var mongoose = require('mongoose');
-var url = "mongodb://localhost:27017/mydb";
 
 
 
