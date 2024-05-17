@@ -11,9 +11,6 @@ const {Players} = require('./utils/players');
 
 
 
-const url = process.env.MONGODB_URI; // Use environment variable for MongoDB URI
-const port = process.env.PORT || 3000; // Use environment variable for port, default to 3000
-
 
 // Connect to MongoDB using mongoose with the updated options
 mongoose.connect(url, {
