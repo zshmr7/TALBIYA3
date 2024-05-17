@@ -4,17 +4,54 @@ const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
 
+
+
+
+
+
+
+
+
 //Import classes
 const {LiveGames} = require('./utils/liveGames');
 const {Players} = require('./utils/players');
 
+require('dotenv').config(); // Load environment variables from .env file
+
+const mongoose = require('mongoose');
+
+const url = process.env.MONGODB_URI;
 
 mongoose.connect(url, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
 })
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.error('MongoDB connection error:', error));
+
+// Connection events
+mongoose.connection.on('connected', () => {
+  console.log('Mongoose connected to DB');
+});
+
+mongoose.connection.on('error', (err) => {
+  console.error(`Mongoose connection error: ${err}`);
+});
+
+mongoose.connection.on('disconnected', () => {
+  console.log('Mongoose disconnected from DB');
+});
+
+// Handling process termination
+process.on('SIGINT', () => {
+  mongoose.connection.close(() => {
+    console.log('Mongoose connection disconnected due to app termination');
+    process.exit(0);
+  });
+});
+
 
 
 
