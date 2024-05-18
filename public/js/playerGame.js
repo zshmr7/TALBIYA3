@@ -32,7 +32,7 @@ function answerSubmitted(num){
         document.getElementById('answer3').style.visibility = "hidden";
         document.getElementById('answer4').style.visibility = "hidden";
         document.getElementById('message').style.display = "block";
-        document.getElementById('message').innerHTML = "في انتظار باقي اللعابين للاجابة !";
+        document.getElementById('message').innerHTML = "في انتظار باقي المتسابقين للاجابة !";
         
     }
 }
@@ -98,6 +98,6 @@ socket.on('GameOver', function(){
     document.getElementById('answer3').style.visibility = "hidden";
     document.getElementById('answer4').style.visibility = "hidden";
     document.getElementById('message').style.display = "block";
-    document.getElementById('message').innerHTML = "حظا موفقا ";
+    document.getElementById('message').innerHTML = "حظا موفقا في المرة الاخرى ";
 });
 
