@@ -8,7 +8,8 @@ header {
     background-color: #f0f0f0;
     padding: 10px;
 }
-
+#game-list{
+    text-align: center;
 .main {
     display: flex;
     justify-content: space-between;
