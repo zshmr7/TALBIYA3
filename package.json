@@ -18,7 +18,15 @@
     "mongoose": "^5.13.22",
     "open": "^10.1.0",
     "server": "^1.0.39",
-    "socket.io": "^2.5.0"
+    "socket.io": "^4.7.5",
+    "http": "^0.0.1-security",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "path": "^0.12.7"
+
+
+
+
   },
   "devDependencies": {
     "expect": "^23.0.1"
