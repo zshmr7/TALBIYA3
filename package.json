@@ -18,7 +18,7 @@
     "mongoose": "^5.13.22",
     "open": "^10.1.0",
     "server": "^1.0.39",
-    "socket.io": "^4.7.5",
+    "socket.io": "^4.7.5"
   },
   "devDependencies": {
     "expect": "^23.0.1"
