@@ -21,7 +21,7 @@ const {Players} = require('./utils/players');
 require('dotenv').config(); // Load environment variables from .env file
 
 
-const url = process.env.MONGODB_URI || "mongodb+srv://v7zy:0599759271@cluster0.l2lnx8g.mongodb.net/";
+const url = process.env.MONGODB_URI || "mongodb+srv://v7zy:0599759271@cluster0.l2lnx8g.mongodb.net/yourdbname?retryWrites=true&w=majority";
 
 mongoose.connect(url, {
   useNewUrlParser: true,
