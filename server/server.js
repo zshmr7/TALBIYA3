@@ -3,6 +3,8 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
+const mongoose = require('mongoose');
+
 
 
 const { MongoClient } = require('mongodb');
@@ -21,7 +23,7 @@ const {Players} = require('./utils/players');
 require('dotenv').config(); // Load environment variables from .env file
 
 
-const url = process.env.MONGODB_URI || "mongodb+srv://v7zy:0599759271@cluster0.l2lnx8g.mongodb.net/yourdbname?retryWrites=true&w=majority";
+const url = process.env.MONGODB_URI || "mongodb+srv://v7zy:0599759271@cluster0.l2lnx8g.mongodb.net/";
 
 mongoose.connect(url, {
   useNewUrlParser: true,
